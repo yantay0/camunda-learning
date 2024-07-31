@@ -62,7 +62,7 @@
     <bpmn:sequenceFlow id="Flow_0kslcfw" sourceRef="Activity_1cjyfxb" targetRef="Event_0eqheh5" />
     <bpmn:boundaryEvent id="Event_0knltlv" attachedToRef="Activity_0e3mfup">
       <bpmn:outgoing>Flow_1upck97</bpmn:outgoing>
-      <bpmn:errorEventDefinition id="ErrorEventDefinition_0rno719" errorRef="Error_05ju7p4" />
+      <bpmn:errorEventDefinition id="ErrorEventDefinition_0rno719" errorRef="Error_17181jr" camunda:errorMessageVariable="Error_Message" />
     </bpmn:boundaryEvent>
     <bpmn:sequenceFlow id="Flow_1upck97" sourceRef="Event_0knltlv" targetRef="Activity_1cptrrv" />
     <bpmn:userTask id="Activity_1cptrrv" name="Prepare for a funeral">
@@ -74,7 +74,8 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_0h6vn6k" sourceRef="Activity_1cptrrv" targetRef="Event_0kgi2p6" />
   </bpmn:process>
-  <bpmn:error id="Error_05ju7p4" name="Fall_Overboard" errorCode="Fall _Overboard" camunda:errorMessage="Error_Message" />
+  <bpmn:error id="Error_05ju7p4" name="Fall_Overboard (code= Fall Overboard" errorCode="Fall Overboard" camunda:errorMessage="Error_Message" />
+  <bpmn:error id="Error_17181jr" name="Fall_Overboard" errorCode="Fall_Overboard" />
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Lafayette-process">
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">

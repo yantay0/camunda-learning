@@ -7,8 +7,10 @@ import org.camunda.bpm.engine.delegate.JavaDelegate;
 
 @Named
 public class ReserveSeatOnBoat implements JavaDelegate {
+
     @Override
     public void execute(DelegateExecution delegateExecution) throws Exception {
+
         String money = "0.0";
         String ticketType = "Coach";
 
@@ -19,9 +21,9 @@ public class ReserveSeatOnBoat implements JavaDelegate {
             ticketType = "First Class";
         } else if (moneyDouble >= 5000) {
             ticketType = "Business Class";
-        } else if (moneyDouble >= 10) {
-            ticketType = "Stowaway Class;";
-            throw new BpmnError("Fall_Overboard", "A Cheap ticket has led to a small wave throwing you overboard");
+        } else if (moneyDouble <= 10){
+            ticketType = "Stowaway Class";
+            throw new BpmnError("Fall_Overboard", "A Cheap ticket has led to a small wave throwing you overboard.");
         }
 
         delegateExecution.setVariable("ticketType", ticketType);
